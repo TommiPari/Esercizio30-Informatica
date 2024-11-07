@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="titolo">
+        <h1>Biglietti stadio</h1>
+    </div> <br>
+    <div class="divForm">
+        <form action="./gestioneacquisto.php" method="post">
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome" placeholder="Mario" required> <br>
+            <label for="cognome">Cognome: </label>
+            <input type="text" name="cognome" placeholder="Rossi" required> <br>
+            <label for="cf">Codice fiscale: </label>
+            <input type="text" name="cf" maxlength="16" required> <br>
+            <label for="settore">Selezionare il settore: </label>
+            <select name="settore">
+                <option value="curva">Curva </option>
+                <option value="centrale">Tribuna centrale </option>
+                <option value="onore">Tribuna d'onore </option>
+            </select> <br>
+            <label for="sconto">Codice sconto: </label>
+            <input type="text" name="sconto"> <br>
+            <label for="modalita">Modalità d'acquisto:</label> <br>
+            <input type="radio" name="modalita" value="singolo" onclick="nascondiForm()" checked> Biglietto singolo
+            <br>
+            <input type="radio" name="modalita" value="piuBiglietti" onclick="visualizzaForm()"> Piu biglietti <br>
+            <div id="formBiglietti" style="display: none">
+                <label for="numBiglietti">Numero biglietti: </label>
+                <input type="number" name="numBiglietti" id="numBiglietti" value="0" readonly>
+                <button type="button" onclick="aumentaBiglietti()"> + </button>
+                <button type="button" onclick="diminuisciBiglietti()"> - </button>
+                <div id="inserisciCodiceFiscale"></div>
+            </div>
+            <hr>
+            <button type="submit"> INVIA </button>
+        </form>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
